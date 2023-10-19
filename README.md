@@ -37,7 +37,7 @@ import (
 )
 
 func main() {
-	// Configurar a string de conexão
+	
 	db, err := sql.Open("mysql", "root:root@tcp(localhost:3306)/go_course?charset=utf8")
 	if err != nil {
 		fmt.Println("Erro ao conectar ao banco de dados:", err)
@@ -45,7 +45,7 @@ func main() {
 	}
 	defer db.Close()
 
-	// Preparar a consulta SELECT
+	
 	query := "SELECT id, nome FROM exemplo"
 	rows, err := db.Query(query)
 	if err != nil {
@@ -54,7 +54,7 @@ func main() {
 	}
 	defer rows.Close()
 
-	// Iterar sobre os resultados
+	
 	for rows.Next() {
 		var id int
 		var nome string
